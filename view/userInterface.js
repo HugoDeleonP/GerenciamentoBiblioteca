@@ -14,7 +14,13 @@ export function menuPrincipal(){
     console.log(" 5- Alterar disponibilidade de livro");
     console.log(" 6- Remover livro");
 
+    console.log("\n 0- Sair");
+
     return parseInt(input("Digite uma opção disponível: "));
+}
+
+export function digitaId(){
+    return parseInt(input("Digite o ID do livro: "));
 }
 
 export function digitaTitulo(){
@@ -36,3 +42,22 @@ export function digitaGenero(){
 export function livros_toString(index, livro){
     console.log(`${index}- ${livro}`);
 }
+
+export function alteraDisponibilidadeMenu(){
+    console.log("=====================| Alteração de disponibilidade |=====================");
+    console.log(" 1- Emprestada");
+    console.log(" 2- Disponível");
+
+    return parseInt(input("Digite uma opção disponível: "));
+}
+
+export function editarLivroMenu(){
+    console.log("=====================| Alteração de disponibilidade |=====================");
+    console.log(" 1- Título");
+    console.log(" 2- Autor");
+    console.log(" 3- Ano");
+    console.log(" 4- Gênero");
+
+    return parseInt(input("Digite uma opção disponível: "));
+}
+

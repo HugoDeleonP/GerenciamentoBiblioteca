@@ -20,5 +20,9 @@ export function rotaMenu(escolha){
         case 6:
             removeLivro();
             break;
+
+        case 0:
+            console.log("Programa encerrando...");
+            break;
     }
 }

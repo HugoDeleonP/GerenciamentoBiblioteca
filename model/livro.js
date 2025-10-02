@@ -1,5 +1,6 @@
 export class Livro{
-    constructor(titulo, autor, anoPublicacao, genero, disponibilidade){
+    constructor(id, titulo, autor, anoPublicacao, genero, disponibilidade){
+        this.id = id;
         this.titulo = titulo;
         this.autor = autor;
         this.anoPublicacao = anoPublicacao;

@@ -6,13 +6,15 @@ const password = "1234";
 const database = "biblioteca";
 const port = "3309";
 
-const connection = mysql.createConnection({
+let config = {
     host: host,
     user: username,
     password: password,
     database: database,
     port: port
-});
+}
+
+export const connection = mysql.createConnection(config);
 
 connection.connect((error) =>{
    if(error) throw error;

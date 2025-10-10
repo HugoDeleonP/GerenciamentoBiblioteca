@@ -1,5 +1,6 @@
 import { digitaAnoPublicacao, digitaAutor, digitaGenero, digitaTitulo, digitaId, alteraDisponibilidadeMenu, editarLivroMenu} from '../view/userInterface.js';
 import { Livro } from '../model/livro.js';
+import {connection} from '../util/connection.js';
 
 let livros = [];
 let livro = new Livro;
@@ -18,8 +19,18 @@ export function criaLivro(){
     let autor = digitaAutor();
     let ano = digitaAnoPublicacao();
     let genero = digitaGenero();
+
+    try {
+        connection.execute(
+        'INSERT INTO livro (titulo, autor, ano, genero) VALUES (?, ?, ?, ?);',
+        [titulo, autor, ano, genero]
+        );
+    } catch (error) {
+        console.log(error);
+    }
     
-    livro = new Livro(id, titulo, autor, ano, genero);
+
+    
 
     livros.push(livro);
 }
